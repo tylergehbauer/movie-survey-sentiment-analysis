@@ -1700,3 +1700,692 @@
                            tol=0.0001, validation_fraction=0.1, verbose=0,
                            warm_start=False)
 2022-03-18 14:43:19,085:INFO:finalize_model() succesfully completed......................................
+2022-03-18 16:04:49,200:INFO:Initializing predict_model()
+2022-03-18 16:04:49,200:INFO:predict_model(estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.05, loss='deviance', max_depth=1,
+                           max_features=1.0, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002,
+                           min_impurity_split=None, min_samples_leaf=5,
+                           min_samples_split=7, min_weight_fraction_leaf=0.0,
+                           n_estimators=130, n_iter_no_change=None,
+                           presort='deprecated', random_state=5, subsample=0.5,
+                           tol=0.0001, validation_fraction=0.1, verbose=0,
+                           warm_start=False), probability_threshold=None, encoded_labels=False, drift_report=False, raw_score=False, round=4, verbose=True, ml_usecase=MLUsecase.CLASSIFICATION, display=None)
+2022-03-18 16:04:49,200:INFO:Checking exceptions
+2022-03-18 16:04:49,200:INFO:Preloading libraries
+2022-03-18 16:04:49,201:INFO:Preparing display monitor
+2022-03-18 16:55:27,649:INFO:Initializing save_model()
+2022-03-18 16:55:27,650:INFO:save_model(model=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.05, loss='deviance', max_depth=1,
+                           max_features=1.0, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002,
+                           min_impurity_split=None, min_samples_leaf=5,
+                           min_samples_split=7, min_weight_fraction_leaf=0.0,
+                           n_estimators=130, n_iter_no_change=None,
+                           presort='deprecated', random_state=5, subsample=0.5,
+                           tol=0.0001, validation_fraction=0.1, verbose=0,
+                           warm_start=False), model_name=Final GBC Model IMDB Review Sentiment Analysis V1, prep_pipe_=Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[],
+                                      ml_usecase='classification',
+                                      numerical_features=[], target='sentiment',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_st...
+                ('scaling', 'passthrough'), ('P_transform', 'passthrough'),
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='sentiment')),
+                ('fix_perfect', Remove_100(target='sentiment')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough')],
+         verbose=False), verbose=True, kwargs={})
+2022-03-18 16:55:27,650:INFO:Adding model into prep_pipe
+2022-03-18 16:55:27,669:INFO:Final GBC Model IMDB Review Sentiment Analysis V1.pkl saved in current working directory
+2022-03-18 16:55:27,675:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[],
+                                      ml_usecase='classification',
+                                      numerical_features=[], target='sentiment',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_st...
+                                            learning_rate=0.05, loss='deviance',
+                                            max_depth=1, max_features=1.0,
+                                            max_leaf_nodes=None,
+                                            min_impurity_decrease=0.0002,
+                                            min_impurity_split=None,
+                                            min_samples_leaf=5,
+                                            min_samples_split=7,
+                                            min_weight_fraction_leaf=0.0,
+                                            n_estimators=130,
+                                            n_iter_no_change=None,
+                                            presort='deprecated',
+                                            random_state=5, subsample=0.5,
+                                            tol=0.0001, validation_fraction=0.1,
+                                            verbose=0, warm_start=False)]],
+         verbose=False)
+2022-03-18 16:55:27,675:INFO:save_model() successfully completed......................................
+2022-03-18 16:57:03,806:INFO:PyCaret NLP Module
+2022-03-18 16:57:03,806:INFO:version 2.3.6
+2022-03-18 16:57:03,806:INFO:Initializing setup()
+2022-03-18 16:57:03,806:INFO:USI: 7a3d
+2022-03-18 16:57:03,806:INFO:setup(data=(75, 1), target=0, custom_stopwords=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't", 'u', "it'", "'s", "n't", '…', '\\`', '``', 'char', 'chars', "''", '’', 'arent', 'Mr.', ',', 'br', 'film', 'movie', 'say', 'get', 'would', 'could', 'people', 'guy', 'put', 'given', 'go', 'one', 'even', 'also', "'m"], html=True, session_id=22, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_data=False, verbose=True)
+2022-03-18 16:57:03,807:INFO:Checking environment
+2022-03-18 16:57:03,807:INFO:python_version: 3.7.11
+2022-03-18 16:57:03,807:INFO:python_build: ('default', 'Jul 27 2021 09:42:29')
+2022-03-18 16:57:03,807:INFO:machine: AMD64
+2022-03-18 16:57:03,807:INFO:platform: Windows-10-10.0.19041-SP0
+2022-03-18 16:57:03,808:INFO:Memory: svmem(total=12797779968, available=2942283776, percent=77.0, used=9855496192, free=2942283776)
+2022-03-18 16:57:03,808:INFO:Physical Core: 4
+2022-03-18 16:57:03,808:INFO:Logical Core: 8
+2022-03-18 16:57:03,808:INFO:Checking libraries
+2022-03-18 16:57:03,808:INFO:pd==1.3.5
+2022-03-18 16:57:03,808:INFO:numpy==1.20.0
+2022-03-18 16:57:03,808:INFO:gensim==3.8.3
+2022-03-18 16:57:03,808:INFO:spacy==2.3.7
+2022-03-18 16:57:03,808:INFO:nltk==3.6.5
+2022-03-18 16:57:03,808:INFO:textblob==0.17.1
+2022-03-18 16:57:03,808:INFO:pyLDAvis==3.2.2
+2022-03-18 16:57:03,809:INFO:wordcloud==1.8.1
+2022-03-18 16:57:03,809:INFO:mlflow==1.24.0
+2022-03-18 16:57:03,809:INFO:Checking Exceptions
+2022-03-18 16:57:04,451:INFO:Preloading libraries
+2022-03-18 16:57:04,451:INFO:Preparing display monitor
+2022-03-18 16:57:04,464:INFO:Importing libraries
+2022-03-18 16:57:04,465:INFO:Declaring global variables
+2022-03-18 16:57:04,465:INFO:Input provided : dataframe
+2022-03-18 16:57:04,465:INFO:session_id set to : 22
+2022-03-18 16:57:04,465:INFO:Copying training dataset
+2022-03-18 16:57:04,466:INFO:Importing stopwords from nltk
+2022-03-18 16:57:04,535:INFO:Removing numeric characters from the text
+2022-03-18 16:57:04,540:INFO:Removing special characters from the text
+2022-03-18 16:57:04,546:INFO:Tokenizing Words
+2022-03-18 16:57:04,555:INFO:Removing stopwords
+2022-03-18 16:57:04,564:INFO:Extracting Bigrams
+2022-03-18 16:57:04,573:INFO:Extracting Trigrams
+2022-03-18 16:57:04,588:INFO:Lemmatizing tokens
+2022-03-18 16:57:05,608:INFO:Removing stopwords after lemmatizing
+2022-03-18 16:57:05,628:INFO:Creating corpus and dictionary
+2022-03-18 16:57:05,644:INFO:Compiling processed text
+2022-03-18 16:57:05,648:INFO:Compiling information grid
+2022-03-18 16:57:05,657:INFO:setup() succesfully completed......................................
+2022-03-18 16:57:05,676:INFO:Initializing create_model()
+2022-03-18 16:57:05,676:INFO:create_model(model=lda, multi_core=True, num_topics=None, verbose=True, system=True)
+2022-03-18 16:57:05,676:INFO:Checking exceptions
+2022-03-18 16:57:05,676:INFO:Preloading libraries
+2022-03-18 16:57:05,676:INFO:Preparing display monitor
+2022-03-18 16:57:05,689:INFO:Defining topic model
+2022-03-18 16:57:05,689:INFO:Model: Latent Dirichlet Allocation
+2022-03-18 16:57:05,690:INFO:Defining num_topics parameter
+2022-03-18 16:57:05,690:INFO:num_topics set to: 4
+2022-03-18 16:57:05,696:INFO:LDA multi_core enabled
+2022-03-18 16:57:05,697:INFO:LdaMulticore imported successfully
+2022-03-18 16:57:07,016:INFO:LdaMulticore trained successfully
+2022-03-18 16:57:07,019:INFO:LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100)
+2022-03-18 16:57:07,019:INFO:create_model() succesfully completed......................................
+2022-03-18 16:57:07,024:INFO:Initializing assign_model()
+2022-03-18 16:57:07,025:INFO:assign_model(model=LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100), verbose=True)
+2022-03-18 16:57:07,025:INFO:Determining model type
+2022-03-18 16:57:07,025:INFO:model type: lda
+2022-03-18 16:57:07,025:INFO:Checking exceptions
+2022-03-18 16:57:07,025:INFO:Preloading libraries
+2022-03-18 16:57:07,025:INFO:Preparing display monitor
+2022-03-18 16:57:07,098:INFO:(75, 8)
+2022-03-18 16:57:07,098:INFO:assign_model() succesfully completed......................................
+2022-03-18 16:58:47,924:INFO:PyCaret NLP Module
+2022-03-18 16:58:47,924:INFO:version 2.3.6
+2022-03-18 16:58:47,924:INFO:Initializing setup()
+2022-03-18 16:58:47,924:INFO:USI: d19a
+2022-03-18 16:58:47,924:INFO:setup(data=(75, 1), target=0, custom_stopwords=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't", 'u', "it'", "'s", "n't", '…', '\\`', '``', 'char', 'chars', "''", '’', 'arent', 'Mr.', ',', 'br', 'film', 'movie', 'say', 'get', 'would', 'could', 'people', 'guy', 'put', 'given', 'go', 'one', 'even', 'also', "'m"], html=True, session_id=22, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_data=False, verbose=True)
+2022-03-18 16:58:47,925:INFO:Checking environment
+2022-03-18 16:58:47,925:INFO:python_version: 3.7.11
+2022-03-18 16:58:47,925:INFO:python_build: ('default', 'Jul 27 2021 09:42:29')
+2022-03-18 16:58:47,925:INFO:machine: AMD64
+2022-03-18 16:58:47,925:INFO:platform: Windows-10-10.0.19041-SP0
+2022-03-18 16:58:47,925:INFO:Memory: svmem(total=12797779968, available=2924400640, percent=77.1, used=9873379328, free=2924400640)
+2022-03-18 16:58:47,925:INFO:Physical Core: 4
+2022-03-18 16:58:47,925:INFO:Logical Core: 8
+2022-03-18 16:58:47,925:INFO:Checking libraries
+2022-03-18 16:58:47,925:INFO:pd==1.3.5
+2022-03-18 16:58:47,925:INFO:numpy==1.20.0
+2022-03-18 16:58:47,925:INFO:gensim==3.8.3
+2022-03-18 16:58:47,925:INFO:spacy==2.3.7
+2022-03-18 16:58:47,925:INFO:nltk==3.6.5
+2022-03-18 16:58:47,925:INFO:textblob==0.17.1
+2022-03-18 16:58:47,925:INFO:pyLDAvis==3.2.2
+2022-03-18 16:58:47,925:INFO:wordcloud==1.8.1
+2022-03-18 16:58:47,926:INFO:mlflow==1.24.0
+2022-03-18 16:58:47,926:INFO:Checking Exceptions
+2022-03-18 16:58:48,526:INFO:Preloading libraries
+2022-03-18 16:58:48,526:INFO:Preparing display monitor
+2022-03-18 16:58:48,538:INFO:Importing libraries
+2022-03-18 16:58:48,539:INFO:Declaring global variables
+2022-03-18 16:58:48,539:INFO:Input provided : dataframe
+2022-03-18 16:58:48,539:INFO:session_id set to : 22
+2022-03-18 16:58:48,539:INFO:Copying training dataset
+2022-03-18 16:58:48,540:INFO:Importing stopwords from nltk
+2022-03-18 16:58:48,542:INFO:Removing numeric characters from the text
+2022-03-18 16:58:48,548:INFO:Removing special characters from the text
+2022-03-18 16:58:48,554:INFO:Tokenizing Words
+2022-03-18 16:58:48,561:INFO:Removing stopwords
+2022-03-18 16:58:48,568:INFO:Extracting Bigrams
+2022-03-18 16:58:48,580:INFO:Extracting Trigrams
+2022-03-18 16:58:48,593:INFO:Lemmatizing tokens
+2022-03-18 16:58:49,458:INFO:Removing stopwords after lemmatizing
+2022-03-18 16:58:49,471:INFO:Creating corpus and dictionary
+2022-03-18 16:58:49,481:INFO:Compiling processed text
+2022-03-18 16:58:49,482:INFO:Compiling information grid
+2022-03-18 16:58:49,487:INFO:setup() succesfully completed......................................
+2022-03-18 16:58:49,509:INFO:Initializing create_model()
+2022-03-18 16:58:49,509:INFO:create_model(model=lda, multi_core=True, num_topics=None, verbose=True, system=True)
+2022-03-18 16:58:49,509:INFO:Checking exceptions
+2022-03-18 16:58:49,509:INFO:Preloading libraries
+2022-03-18 16:58:49,509:INFO:Preparing display monitor
+2022-03-18 16:58:49,524:INFO:Defining topic model
+2022-03-18 16:58:49,524:INFO:Model: Latent Dirichlet Allocation
+2022-03-18 16:58:49,524:INFO:Defining num_topics parameter
+2022-03-18 16:58:49,524:INFO:num_topics set to: 4
+2022-03-18 16:58:49,529:INFO:LDA multi_core enabled
+2022-03-18 16:58:49,529:INFO:LdaMulticore imported successfully
+2022-03-18 16:58:50,736:INFO:LdaMulticore trained successfully
+2022-03-18 16:58:50,739:INFO:LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100)
+2022-03-18 16:58:50,740:INFO:create_model() succesfully completed......................................
+2022-03-18 16:58:50,746:INFO:Initializing assign_model()
+2022-03-18 16:58:50,747:INFO:assign_model(model=LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100), verbose=True)
+2022-03-18 16:58:50,747:INFO:Determining model type
+2022-03-18 16:58:50,747:INFO:model type: lda
+2022-03-18 16:58:50,747:INFO:Checking exceptions
+2022-03-18 16:58:50,747:INFO:Preloading libraries
+2022-03-18 16:58:50,747:INFO:Preparing display monitor
+2022-03-18 16:58:50,826:INFO:(75, 8)
+2022-03-18 16:58:50,827:INFO:assign_model() succesfully completed......................................
+2022-03-18 17:00:00,588:INFO:PyCaret NLP Module
+2022-03-18 17:00:00,588:INFO:version 2.3.6
+2022-03-18 17:00:00,588:INFO:Initializing setup()
+2022-03-18 17:00:00,588:INFO:USI: 3ee2
+2022-03-18 17:00:00,588:INFO:setup(data=(75, 1), target=0, custom_stopwords=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't", 'u', "it'", "'s", "n't", '…', '\\`', '``', 'char', 'chars', "''", '’', 'arent', 'Mr.', ',', 'br', 'film', 'movie', 'say', 'get', 'would', 'could', 'people', 'guy', 'put', 'given', 'go', 'one', 'even', 'also', "'m"], html=True, session_id=22, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_data=False, verbose=True)
+2022-03-18 17:00:00,588:INFO:Checking environment
+2022-03-18 17:00:00,588:INFO:python_version: 3.7.11
+2022-03-18 17:00:00,588:INFO:python_build: ('default', 'Jul 27 2021 09:42:29')
+2022-03-18 17:00:00,589:INFO:machine: AMD64
+2022-03-18 17:00:00,589:INFO:platform: Windows-10-10.0.19041-SP0
+2022-03-18 17:00:00,589:INFO:Memory: svmem(total=12797779968, available=2970525696, percent=76.8, used=9827254272, free=2970525696)
+2022-03-18 17:00:00,589:INFO:Physical Core: 4
+2022-03-18 17:00:00,589:INFO:Logical Core: 8
+2022-03-18 17:00:00,589:INFO:Checking libraries
+2022-03-18 17:00:00,589:INFO:pd==1.3.5
+2022-03-18 17:00:00,589:INFO:numpy==1.20.0
+2022-03-18 17:00:00,589:INFO:gensim==3.8.3
+2022-03-18 17:00:00,589:INFO:spacy==2.3.7
+2022-03-18 17:00:00,589:INFO:nltk==3.6.5
+2022-03-18 17:00:00,589:INFO:textblob==0.17.1
+2022-03-18 17:00:00,589:INFO:pyLDAvis==3.2.2
+2022-03-18 17:00:00,589:INFO:wordcloud==1.8.1
+2022-03-18 17:00:00,589:INFO:mlflow==1.24.0
+2022-03-18 17:00:00,589:INFO:Checking Exceptions
+2022-03-18 17:00:01,531:INFO:Preloading libraries
+2022-03-18 17:00:01,531:INFO:Preparing display monitor
+2022-03-18 17:00:01,545:INFO:Importing libraries
+2022-03-18 17:00:01,545:INFO:Declaring global variables
+2022-03-18 17:00:01,545:INFO:Input provided : dataframe
+2022-03-18 17:00:01,545:INFO:session_id set to : 22
+2022-03-18 17:00:01,545:INFO:Copying training dataset
+2022-03-18 17:00:01,546:INFO:Importing stopwords from nltk
+2022-03-18 17:00:01,548:INFO:Removing numeric characters from the text
+2022-03-18 17:00:01,554:INFO:Removing special characters from the text
+2022-03-18 17:00:01,563:INFO:Tokenizing Words
+2022-03-18 17:00:01,574:INFO:Removing stopwords
+2022-03-18 17:00:01,581:INFO:Extracting Bigrams
+2022-03-18 17:00:01,593:INFO:Extracting Trigrams
+2022-03-18 17:00:01,605:INFO:Lemmatizing tokens
+2022-03-18 17:00:02,498:INFO:Removing stopwords after lemmatizing
+2022-03-18 17:00:02,515:INFO:Creating corpus and dictionary
+2022-03-18 17:00:02,526:INFO:Compiling processed text
+2022-03-18 17:00:02,527:INFO:Compiling information grid
+2022-03-18 17:00:02,532:INFO:setup() succesfully completed......................................
+2022-03-18 17:00:02,555:INFO:Initializing create_model()
+2022-03-18 17:00:02,555:INFO:create_model(model=lda, multi_core=True, num_topics=None, verbose=True, system=True)
+2022-03-18 17:00:02,556:INFO:Checking exceptions
+2022-03-18 17:00:02,556:INFO:Preloading libraries
+2022-03-18 17:00:02,556:INFO:Preparing display monitor
+2022-03-18 17:00:02,574:INFO:Defining topic model
+2022-03-18 17:00:02,574:INFO:Model: Latent Dirichlet Allocation
+2022-03-18 17:00:02,575:INFO:Defining num_topics parameter
+2022-03-18 17:00:02,575:INFO:num_topics set to: 4
+2022-03-18 17:00:02,581:INFO:LDA multi_core enabled
+2022-03-18 17:00:02,581:INFO:LdaMulticore imported successfully
+2022-03-18 17:00:03,878:INFO:LdaMulticore trained successfully
+2022-03-18 17:00:03,880:INFO:LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100)
+2022-03-18 17:00:03,881:INFO:create_model() succesfully completed......................................
+2022-03-18 17:00:03,887:INFO:Initializing assign_model()
+2022-03-18 17:00:03,888:INFO:assign_model(model=LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100), verbose=True)
+2022-03-18 17:00:03,888:INFO:Determining model type
+2022-03-18 17:00:03,888:INFO:model type: lda
+2022-03-18 17:00:03,888:INFO:Checking exceptions
+2022-03-18 17:00:03,888:INFO:Preloading libraries
+2022-03-18 17:00:03,888:INFO:Preparing display monitor
+2022-03-18 17:00:03,968:INFO:(75, 8)
+2022-03-18 17:00:03,968:INFO:assign_model() succesfully completed......................................
+2022-03-18 17:00:22,049:INFO:Initializing load_model()
+2022-03-18 17:00:22,049:INFO:load_model(model_name=Final GBC Model IMDB Review Sentiment Analysis V1, platform=None, authentication=None, verbose=True)
+2022-03-18 17:00:22,078:INFO:Initializing predict_model()
+2022-03-18 17:00:22,078:INFO:predict_model(estimator=Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[],
+                                      ml_usecase='classification',
+                                      numerical_features=[], target='sentiment',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_st...
+                                            learning_rate=0.05, loss='deviance',
+                                            max_depth=1, max_features=1.0,
+                                            max_leaf_nodes=None,
+                                            min_impurity_decrease=0.0002,
+                                            min_impurity_split=None,
+                                            min_samples_leaf=5,
+                                            min_samples_split=7,
+                                            min_weight_fraction_leaf=0.0,
+                                            n_estimators=130,
+                                            n_iter_no_change=None,
+                                            presort='deprecated',
+                                            random_state=5, subsample=0.5,
+                                            tol=0.0001, validation_fraction=0.1,
+                                            verbose=0, warm_start=False)]],
+         verbose=False), probability_threshold=None, encoded_labels=False, drift_report=False, raw_score=False, round=4, verbose=True, ml_usecase=MLUsecase.CLASSIFICATION, display=None)
+2022-03-18 17:00:22,078:INFO:Checking exceptions
+2022-03-18 17:00:22,078:INFO:Preloading libraries
+2022-03-18 17:00:22,078:INFO:Preparing display monitor
+2022-03-18 17:05:33,505:INFO:PyCaret NLP Module
+2022-03-18 17:05:33,505:INFO:version 2.3.6
+2022-03-18 17:05:33,505:INFO:Initializing setup()
+2022-03-18 17:05:33,505:INFO:USI: 1bc4
+2022-03-18 17:05:33,505:INFO:setup(data=(75, 1), target=review, custom_stopwords=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't", 'u', "it'", "'s", "n't", '…', '\\`', '``', 'char', 'chars', "''", '’', 'arent', 'Mr.', ',', 'br', 'film', 'movie', 'say', 'get', 'would', 'could', 'people', 'guy', 'put', 'given', 'go', 'one', 'even', 'also', "'m"], html=True, session_id=22, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_data=False, verbose=True)
+2022-03-18 17:05:33,505:INFO:Checking environment
+2022-03-18 17:05:33,506:INFO:python_version: 3.7.11
+2022-03-18 17:05:33,506:INFO:python_build: ('default', 'Jul 27 2021 09:42:29')
+2022-03-18 17:05:33,506:INFO:machine: AMD64
+2022-03-18 17:05:33,506:INFO:platform: Windows-10-10.0.19041-SP0
+2022-03-18 17:05:33,506:INFO:Memory: svmem(total=12797779968, available=2915287040, percent=77.2, used=9882492928, free=2915287040)
+2022-03-18 17:05:33,506:INFO:Physical Core: 4
+2022-03-18 17:05:33,506:INFO:Logical Core: 8
+2022-03-18 17:05:33,506:INFO:Checking libraries
+2022-03-18 17:05:33,506:INFO:pd==1.3.5
+2022-03-18 17:05:33,506:INFO:numpy==1.20.0
+2022-03-18 17:05:33,506:INFO:gensim==3.8.3
+2022-03-18 17:05:33,506:INFO:spacy==2.3.7
+2022-03-18 17:05:33,506:INFO:nltk==3.6.5
+2022-03-18 17:05:33,506:INFO:textblob==0.17.1
+2022-03-18 17:05:33,506:INFO:pyLDAvis==3.2.2
+2022-03-18 17:05:33,506:INFO:wordcloud==1.8.1
+2022-03-18 17:05:33,506:INFO:mlflow==1.24.0
+2022-03-18 17:05:33,506:INFO:Checking Exceptions
+2022-03-18 17:05:34,148:INFO:Preloading libraries
+2022-03-18 17:05:34,148:INFO:Preparing display monitor
+2022-03-18 17:05:34,159:INFO:Importing libraries
+2022-03-18 17:05:34,159:INFO:Declaring global variables
+2022-03-18 17:05:34,160:INFO:Input provided : dataframe
+2022-03-18 17:05:34,160:INFO:session_id set to : 22
+2022-03-18 17:05:34,160:INFO:Copying training dataset
+2022-03-18 17:05:34,160:INFO:Importing stopwords from nltk
+2022-03-18 17:05:34,162:INFO:Removing numeric characters from the text
+2022-03-18 17:05:34,167:INFO:Removing special characters from the text
+2022-03-18 17:05:34,174:INFO:Tokenizing Words
+2022-03-18 17:05:34,183:INFO:Removing stopwords
+2022-03-18 17:05:34,191:INFO:Extracting Bigrams
+2022-03-18 17:05:34,201:INFO:Extracting Trigrams
+2022-03-18 17:05:34,213:INFO:Lemmatizing tokens
+2022-03-18 17:05:34,888:INFO:Removing stopwords after lemmatizing
+2022-03-18 17:05:34,893:INFO:Creating corpus and dictionary
+2022-03-18 17:05:34,899:INFO:Compiling processed text
+2022-03-18 17:05:34,899:INFO:Compiling information grid
+2022-03-18 17:05:34,903:INFO:setup() succesfully completed......................................
+2022-03-18 17:05:34,922:INFO:Initializing create_model()
+2022-03-18 17:05:34,922:INFO:create_model(model=lda, multi_core=True, num_topics=None, verbose=True, system=True)
+2022-03-18 17:05:34,922:INFO:Checking exceptions
+2022-03-18 17:05:34,922:INFO:Preloading libraries
+2022-03-18 17:05:34,922:INFO:Preparing display monitor
+2022-03-18 17:05:34,936:INFO:Defining topic model
+2022-03-18 17:05:34,937:INFO:Model: Latent Dirichlet Allocation
+2022-03-18 17:05:34,937:INFO:Defining num_topics parameter
+2022-03-18 17:05:34,937:INFO:num_topics set to: 4
+2022-03-18 17:05:34,942:INFO:LDA multi_core enabled
+2022-03-18 17:05:34,942:INFO:LdaMulticore imported successfully
+2022-03-18 17:05:36,119:INFO:LdaMulticore trained successfully
+2022-03-18 17:05:36,121:INFO:LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100)
+2022-03-18 17:05:36,121:INFO:create_model() succesfully completed......................................
+2022-03-18 17:05:36,127:INFO:Initializing assign_model()
+2022-03-18 17:05:36,128:INFO:assign_model(model=LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100), verbose=True)
+2022-03-18 17:05:36,128:INFO:Determining model type
+2022-03-18 17:05:36,128:INFO:model type: lda
+2022-03-18 17:05:36,128:INFO:Checking exceptions
+2022-03-18 17:05:36,128:INFO:Preloading libraries
+2022-03-18 17:05:36,128:INFO:Preparing display monitor
+2022-03-18 17:05:36,194:INFO:(75, 7)
+2022-03-18 17:05:36,194:INFO:assign_model() succesfully completed......................................
+2022-03-18 17:05:59,786:INFO:Initializing load_model()
+2022-03-18 17:05:59,786:INFO:load_model(model_name=Final GBC Model IMDB Review Sentiment Analysis V1, platform=None, authentication=None, verbose=True)
+2022-03-18 17:05:59,809:INFO:Initializing predict_model()
+2022-03-18 17:05:59,810:INFO:predict_model(estimator=Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[],
+                                      ml_usecase='classification',
+                                      numerical_features=[], target='sentiment',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_st...
+                                            learning_rate=0.05, loss='deviance',
+                                            max_depth=1, max_features=1.0,
+                                            max_leaf_nodes=None,
+                                            min_impurity_decrease=0.0002,
+                                            min_impurity_split=None,
+                                            min_samples_leaf=5,
+                                            min_samples_split=7,
+                                            min_weight_fraction_leaf=0.0,
+                                            n_estimators=130,
+                                            n_iter_no_change=None,
+                                            presort='deprecated',
+                                            random_state=5, subsample=0.5,
+                                            tol=0.0001, validation_fraction=0.1,
+                                            verbose=0, warm_start=False)]],
+         verbose=False), probability_threshold=None, encoded_labels=False, drift_report=False, raw_score=False, round=4, verbose=True, ml_usecase=MLUsecase.CLASSIFICATION, display=None)
+2022-03-18 17:05:59,810:INFO:Checking exceptions
+2022-03-18 17:05:59,810:INFO:Preloading libraries
+2022-03-18 17:05:59,810:INFO:Preparing display monitor
+2022-03-18 17:06:06,429:INFO:Initializing load_model()
+2022-03-18 17:06:06,430:INFO:load_model(model_name=Final GBC Model IMDB Review Sentiment Analysis V1, platform=None, authentication=None, verbose=True)
+2022-03-18 17:06:06,449:INFO:Initializing predict_model()
+2022-03-18 17:06:06,450:INFO:predict_model(estimator=Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[],
+                                      ml_usecase='classification',
+                                      numerical_features=[], target='sentiment',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_st...
+                                            learning_rate=0.05, loss='deviance',
+                                            max_depth=1, max_features=1.0,
+                                            max_leaf_nodes=None,
+                                            min_impurity_decrease=0.0002,
+                                            min_impurity_split=None,
+                                            min_samples_leaf=5,
+                                            min_samples_split=7,
+                                            min_weight_fraction_leaf=0.0,
+                                            n_estimators=130,
+                                            n_iter_no_change=None,
+                                            presort='deprecated',
+                                            random_state=5, subsample=0.5,
+                                            tol=0.0001, validation_fraction=0.1,
+                                            verbose=0, warm_start=False)]],
+         verbose=False), probability_threshold=None, encoded_labels=False, drift_report=False, raw_score=False, round=4, verbose=True, ml_usecase=MLUsecase.CLASSIFICATION, display=None)
+2022-03-18 17:06:06,450:INFO:Checking exceptions
+2022-03-18 17:06:06,450:INFO:Preloading libraries
+2022-03-18 17:06:06,450:INFO:Preparing display monitor
+2022-03-18 17:07:02,748:INFO:PyCaret NLP Module
+2022-03-18 17:07:02,749:INFO:version 2.3.6
+2022-03-18 17:07:02,749:INFO:Initializing setup()
+2022-03-18 17:07:02,749:INFO:USI: 7aa6
+2022-03-18 17:07:02,749:INFO:setup(data=(75, 1), target=0, custom_stopwords=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't", 'u', "it'", "'s", "n't", '…', '\\`', '``', 'char', 'chars', "''", '’', 'arent', 'Mr.', ',', 'br', 'film', 'movie', 'say', 'get', 'would', 'could', 'people', 'guy', 'put', 'given', 'go', 'one', 'even', 'also', "'m"], html=True, session_id=22, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_data=False, verbose=True)
+2022-03-18 17:07:02,749:INFO:Checking environment
+2022-03-18 17:07:02,749:INFO:python_version: 3.7.11
+2022-03-18 17:07:02,749:INFO:python_build: ('default', 'Jul 27 2021 09:42:29')
+2022-03-18 17:07:02,749:INFO:machine: AMD64
+2022-03-18 17:07:02,749:INFO:platform: Windows-10-10.0.19041-SP0
+2022-03-18 17:07:02,750:INFO:Memory: svmem(total=12797779968, available=2895343616, percent=77.4, used=9902436352, free=2895343616)
+2022-03-18 17:07:02,750:INFO:Physical Core: 4
+2022-03-18 17:07:02,750:INFO:Logical Core: 8
+2022-03-18 17:07:02,750:INFO:Checking libraries
+2022-03-18 17:07:02,750:INFO:pd==1.3.5
+2022-03-18 17:07:02,750:INFO:numpy==1.20.0
+2022-03-18 17:07:02,750:INFO:gensim==3.8.3
+2022-03-18 17:07:02,750:INFO:spacy==2.3.7
+2022-03-18 17:07:02,750:INFO:nltk==3.6.5
+2022-03-18 17:07:02,750:INFO:textblob==0.17.1
+2022-03-18 17:07:02,750:INFO:pyLDAvis==3.2.2
+2022-03-18 17:07:02,750:INFO:wordcloud==1.8.1
+2022-03-18 17:07:02,750:INFO:mlflow==1.24.0
+2022-03-18 17:07:02,751:INFO:Checking Exceptions
+2022-03-18 17:07:03,329:INFO:Preloading libraries
+2022-03-18 17:07:03,329:INFO:Preparing display monitor
+2022-03-18 17:07:03,342:INFO:Importing libraries
+2022-03-18 17:07:03,342:INFO:Declaring global variables
+2022-03-18 17:07:03,342:INFO:Input provided : dataframe
+2022-03-18 17:07:03,342:INFO:session_id set to : 22
+2022-03-18 17:07:03,342:INFO:Copying training dataset
+2022-03-18 17:07:03,343:INFO:Importing stopwords from nltk
+2022-03-18 17:07:03,345:INFO:Removing numeric characters from the text
+2022-03-18 17:07:03,351:INFO:Removing special characters from the text
+2022-03-18 17:07:03,358:INFO:Tokenizing Words
+2022-03-18 17:07:03,367:INFO:Removing stopwords
+2022-03-18 17:07:03,379:INFO:Extracting Bigrams
+2022-03-18 17:07:03,390:INFO:Extracting Trigrams
+2022-03-18 17:07:03,403:INFO:Lemmatizing tokens
+2022-03-18 17:07:04,186:INFO:Removing stopwords after lemmatizing
+2022-03-18 17:07:04,198:INFO:Creating corpus and dictionary
+2022-03-18 17:07:04,211:INFO:Compiling processed text
+2022-03-18 17:07:04,213:INFO:Compiling information grid
+2022-03-18 17:07:04,219:INFO:setup() succesfully completed......................................
+2022-03-18 17:07:04,237:INFO:Initializing create_model()
+2022-03-18 17:07:04,237:INFO:create_model(model=lda, multi_core=True, num_topics=None, verbose=True, system=True)
+2022-03-18 17:07:04,237:INFO:Checking exceptions
+2022-03-18 17:07:04,237:INFO:Preloading libraries
+2022-03-18 17:07:04,237:INFO:Preparing display monitor
+2022-03-18 17:07:04,251:INFO:Defining topic model
+2022-03-18 17:07:04,252:INFO:Model: Latent Dirichlet Allocation
+2022-03-18 17:07:04,252:INFO:Defining num_topics parameter
+2022-03-18 17:07:04,252:INFO:num_topics set to: 4
+2022-03-18 17:07:04,256:INFO:LDA multi_core enabled
+2022-03-18 17:07:04,256:INFO:LdaMulticore imported successfully
+2022-03-18 17:07:05,427:INFO:LdaMulticore trained successfully
+2022-03-18 17:07:05,431:INFO:LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100)
+2022-03-18 17:07:05,431:INFO:create_model() succesfully completed......................................
+2022-03-18 17:07:05,439:INFO:Initializing assign_model()
+2022-03-18 17:07:05,439:INFO:assign_model(model=LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100), verbose=True)
+2022-03-18 17:07:05,439:INFO:Determining model type
+2022-03-18 17:07:05,440:INFO:model type: lda
+2022-03-18 17:07:05,440:INFO:Checking exceptions
+2022-03-18 17:07:05,440:INFO:Preloading libraries
+2022-03-18 17:07:05,440:INFO:Preparing display monitor
+2022-03-18 17:07:05,508:INFO:(75, 8)
+2022-03-18 17:07:05,508:INFO:assign_model() succesfully completed......................................
+2022-03-18 17:08:16,683:INFO:PyCaret NLP Module
+2022-03-18 17:08:16,683:INFO:version 2.3.6
+2022-03-18 17:08:16,683:INFO:Initializing setup()
+2022-03-18 17:08:16,683:INFO:USI: f066
+2022-03-18 17:08:16,683:INFO:setup(data=(75, 1), target=0, custom_stopwords=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't", 'u', "it'", "'s", "n't", '…', '\\`', '``', 'char', 'chars', "''", '’', 'arent', 'Mr.', ',', 'br', 'film', 'movie', 'say', 'get', 'would', 'could', 'people', 'guy', 'put', 'given', 'go', 'one', 'even', 'also', "'m"], html=True, session_id=22, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_data=False, verbose=True)
+2022-03-18 17:08:16,683:INFO:Checking environment
+2022-03-18 17:08:16,683:INFO:python_version: 3.7.11
+2022-03-18 17:08:16,684:INFO:python_build: ('default', 'Jul 27 2021 09:42:29')
+2022-03-18 17:08:16,684:INFO:machine: AMD64
+2022-03-18 17:08:16,684:INFO:platform: Windows-10-10.0.19041-SP0
+2022-03-18 17:08:16,684:INFO:Memory: svmem(total=12797779968, available=2794766336, percent=78.2, used=10003013632, free=2794766336)
+2022-03-18 17:08:16,684:INFO:Physical Core: 4
+2022-03-18 17:08:16,684:INFO:Logical Core: 8
+2022-03-18 17:08:16,684:INFO:Checking libraries
+2022-03-18 17:08:16,684:INFO:pd==1.3.5
+2022-03-18 17:08:16,684:INFO:numpy==1.20.0
+2022-03-18 17:08:16,684:INFO:gensim==3.8.3
+2022-03-18 17:08:16,684:INFO:spacy==2.3.7
+2022-03-18 17:08:16,684:INFO:nltk==3.6.5
+2022-03-18 17:08:16,684:INFO:textblob==0.17.1
+2022-03-18 17:08:16,685:INFO:pyLDAvis==3.2.2
+2022-03-18 17:08:16,685:INFO:wordcloud==1.8.1
+2022-03-18 17:08:16,685:INFO:mlflow==1.24.0
+2022-03-18 17:08:16,685:INFO:Checking Exceptions
+2022-03-18 17:08:17,207:INFO:Preloading libraries
+2022-03-18 17:08:17,208:INFO:Preparing display monitor
+2022-03-18 17:08:17,231:INFO:Importing libraries
+2022-03-18 17:08:17,232:INFO:Declaring global variables
+2022-03-18 17:08:17,232:INFO:Input provided : dataframe
+2022-03-18 17:08:17,233:INFO:session_id set to : 22
+2022-03-18 17:08:17,233:INFO:Copying training dataset
+2022-03-18 17:08:17,235:INFO:Importing stopwords from nltk
+2022-03-18 17:08:17,238:INFO:Removing numeric characters from the text
+2022-03-18 17:08:17,251:INFO:Removing special characters from the text
+2022-03-18 17:08:17,266:INFO:Tokenizing Words
+2022-03-18 17:08:17,277:INFO:Removing stopwords
+2022-03-18 17:08:17,286:INFO:Extracting Bigrams
+2022-03-18 17:08:17,301:INFO:Extracting Trigrams
+2022-03-18 17:08:17,315:INFO:Lemmatizing tokens
+2022-03-18 17:08:17,938:INFO:Removing stopwords after lemmatizing
+2022-03-18 17:08:17,943:INFO:Creating corpus and dictionary
+2022-03-18 17:08:17,949:INFO:Compiling processed text
+2022-03-18 17:08:17,950:INFO:Compiling information grid
+2022-03-18 17:08:17,954:INFO:setup() succesfully completed......................................
+2022-03-18 17:08:17,971:INFO:Initializing create_model()
+2022-03-18 17:08:17,971:INFO:create_model(model=lda, multi_core=True, num_topics=None, verbose=True, system=True)
+2022-03-18 17:08:17,971:INFO:Checking exceptions
+2022-03-18 17:08:17,971:INFO:Preloading libraries
+2022-03-18 17:08:17,971:INFO:Preparing display monitor
+2022-03-18 17:08:17,984:INFO:Defining topic model
+2022-03-18 17:08:17,984:INFO:Model: Latent Dirichlet Allocation
+2022-03-18 17:08:17,984:INFO:Defining num_topics parameter
+2022-03-18 17:08:17,984:INFO:num_topics set to: 4
+2022-03-18 17:08:17,989:INFO:LDA multi_core enabled
+2022-03-18 17:08:17,989:INFO:LdaMulticore imported successfully
+2022-03-18 17:08:19,175:INFO:LdaMulticore trained successfully
+2022-03-18 17:08:19,177:INFO:LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100)
+2022-03-18 17:08:19,177:INFO:create_model() succesfully completed......................................
+2022-03-18 17:08:19,183:INFO:Initializing assign_model()
+2022-03-18 17:08:19,184:INFO:assign_model(model=LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100), verbose=True)
+2022-03-18 17:08:19,184:INFO:Determining model type
+2022-03-18 17:08:19,184:INFO:model type: lda
+2022-03-18 17:08:19,184:INFO:Checking exceptions
+2022-03-18 17:08:19,184:INFO:Preloading libraries
+2022-03-18 17:08:19,184:INFO:Preparing display monitor
+2022-03-18 17:08:19,270:INFO:(75, 8)
+2022-03-18 17:08:19,270:INFO:assign_model() succesfully completed......................................
+2022-03-18 17:10:06,040:INFO:PyCaret NLP Module
+2022-03-18 17:10:06,040:INFO:version 2.3.6
+2022-03-18 17:10:06,040:INFO:Initializing setup()
+2022-03-18 17:10:06,040:INFO:USI: af91
+2022-03-18 17:10:06,040:INFO:setup(data=(75, 1), target=0, custom_stopwords=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't", 'u', "it'", "'s", "n't", '…', '\\`', '``', 'char', 'chars', "''", '’', 'arent', 'Mr.', ',', 'br', 'film', 'movie', 'say', 'get', 'would', 'could', 'people', 'guy', 'put', 'given', 'go', 'one', 'even', 'also', "'m"], html=True, session_id=22, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_data=False, verbose=True)
+2022-03-18 17:10:06,040:INFO:Checking environment
+2022-03-18 17:10:06,040:INFO:python_version: 3.7.11
+2022-03-18 17:10:06,040:INFO:python_build: ('default', 'Jul 27 2021 09:42:29')
+2022-03-18 17:10:06,040:INFO:machine: AMD64
+2022-03-18 17:10:06,041:INFO:platform: Windows-10-10.0.19041-SP0
+2022-03-18 17:10:06,041:INFO:Memory: svmem(total=12797779968, available=2870239232, percent=77.6, used=9927540736, free=2870239232)
+2022-03-18 17:10:06,041:INFO:Physical Core: 4
+2022-03-18 17:10:06,041:INFO:Logical Core: 8
+2022-03-18 17:10:06,041:INFO:Checking libraries
+2022-03-18 17:10:06,041:INFO:pd==1.3.5
+2022-03-18 17:10:06,041:INFO:numpy==1.20.0
+2022-03-18 17:10:06,041:INFO:gensim==3.8.3
+2022-03-18 17:10:06,041:INFO:spacy==2.3.7
+2022-03-18 17:10:06,041:INFO:nltk==3.6.5
+2022-03-18 17:10:06,041:INFO:textblob==0.17.1
+2022-03-18 17:10:06,041:INFO:pyLDAvis==3.2.2
+2022-03-18 17:10:06,041:INFO:wordcloud==1.8.1
+2022-03-18 17:10:06,041:INFO:mlflow==1.24.0
+2022-03-18 17:10:06,041:INFO:Checking Exceptions
+2022-03-18 17:10:07,035:INFO:Preloading libraries
+2022-03-18 17:10:07,035:INFO:Preparing display monitor
+2022-03-18 17:10:07,046:INFO:Importing libraries
+2022-03-18 17:10:07,046:INFO:Declaring global variables
+2022-03-18 17:10:07,047:INFO:Input provided : dataframe
+2022-03-18 17:10:07,047:INFO:session_id set to : 22
+2022-03-18 17:10:07,047:INFO:Copying training dataset
+2022-03-18 17:10:07,047:INFO:Importing stopwords from nltk
+2022-03-18 17:10:07,057:INFO:Removing numeric characters from the text
+2022-03-18 17:10:07,063:INFO:Removing special characters from the text
+2022-03-18 17:10:07,068:INFO:Tokenizing Words
+2022-03-18 17:10:07,076:INFO:Removing stopwords
+2022-03-18 17:10:07,085:INFO:Extracting Bigrams
+2022-03-18 17:10:07,097:INFO:Extracting Trigrams
+2022-03-18 17:10:07,111:INFO:Lemmatizing tokens
+2022-03-18 17:10:08,103:INFO:Removing stopwords after lemmatizing
+2022-03-18 17:10:08,109:INFO:Creating corpus and dictionary
+2022-03-18 17:10:08,116:INFO:Compiling processed text
+2022-03-18 17:10:08,117:INFO:Compiling information grid
+2022-03-18 17:10:08,121:INFO:setup() succesfully completed......................................
+2022-03-18 17:10:08,147:INFO:Initializing create_model()
+2022-03-18 17:10:08,147:INFO:create_model(model=lda, multi_core=True, num_topics=None, verbose=True, system=True)
+2022-03-18 17:10:08,147:INFO:Checking exceptions
+2022-03-18 17:10:08,147:INFO:Preloading libraries
+2022-03-18 17:10:08,147:INFO:Preparing display monitor
+2022-03-18 17:10:08,161:INFO:Defining topic model
+2022-03-18 17:10:08,161:INFO:Model: Latent Dirichlet Allocation
+2022-03-18 17:10:08,161:INFO:Defining num_topics parameter
+2022-03-18 17:10:08,161:INFO:num_topics set to: 4
+2022-03-18 17:10:08,166:INFO:LDA multi_core enabled
+2022-03-18 17:10:08,166:INFO:LdaMulticore imported successfully
+2022-03-18 17:10:09,355:INFO:LdaMulticore trained successfully
+2022-03-18 17:10:09,358:INFO:LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100)
+2022-03-18 17:10:09,358:INFO:create_model() succesfully completed......................................
+2022-03-18 17:10:09,363:INFO:Initializing assign_model()
+2022-03-18 17:10:09,363:INFO:assign_model(model=LdaModel(num_terms=151, num_topics=4, decay=0.5, chunksize=100), verbose=True)
+2022-03-18 17:10:09,363:INFO:Determining model type
+2022-03-18 17:10:09,364:INFO:model type: lda
+2022-03-18 17:10:09,364:INFO:Checking exceptions
+2022-03-18 17:10:09,364:INFO:Preloading libraries
+2022-03-18 17:10:09,364:INFO:Preparing display monitor
+2022-03-18 17:10:09,429:INFO:(75, 8)
+2022-03-18 17:10:09,429:INFO:assign_model() succesfully completed......................................
+2022-03-18 17:10:14,602:INFO:Initializing load_model()
+2022-03-18 17:10:14,602:INFO:load_model(model_name=Final GBC Model IMDB Review Sentiment Analysis V1, platform=None, authentication=None, verbose=True)
+2022-03-18 17:10:14,623:INFO:Initializing predict_model()
+2022-03-18 17:10:14,624:INFO:predict_model(estimator=Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[],
+                                      ml_usecase='classification',
+                                      numerical_features=[], target='sentiment',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_st...
+                                            learning_rate=0.05, loss='deviance',
+                                            max_depth=1, max_features=1.0,
+                                            max_leaf_nodes=None,
+                                            min_impurity_decrease=0.0002,
+                                            min_impurity_split=None,
+                                            min_samples_leaf=5,
+                                            min_samples_split=7,
+                                            min_weight_fraction_leaf=0.0,
+                                            n_estimators=130,
+                                            n_iter_no_change=None,
+                                            presort='deprecated',
+                                            random_state=5, subsample=0.5,
+                                            tol=0.0001, validation_fraction=0.1,
+                                            verbose=0, warm_start=False)]],
+         verbose=False), probability_threshold=None, encoded_labels=False, drift_report=False, raw_score=False, round=4, verbose=True, ml_usecase=MLUsecase.CLASSIFICATION, display=None)
+2022-03-18 17:10:14,624:INFO:Checking exceptions
+2022-03-18 17:10:14,624:INFO:Preloading libraries
+2022-03-18 17:10:14,624:INFO:Preparing display monitor
