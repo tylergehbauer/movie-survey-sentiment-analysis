@@ -7,6 +7,9 @@ DataSet information: http://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf
 
 New Library Used: https://www.kaggle.com/nareshbhat/starter-guide-to-build-nlp-ml-model-in-pycaret
 
+Tyler and Troy's code is located in 'movie_sentiment' notebook and GP's Pycaret code is located in 'pycaret_movie_sentiment' notebook. 
+Both can be found on front page of repository. 
+
 ## *Power Point Presentation can be found under 'Presentation' folder*
 
 ---
